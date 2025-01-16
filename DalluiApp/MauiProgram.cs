@@ -9,7 +9,10 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
-			.ConfigureFonts(fonts =>
+			.RegisterPages(BootStrapper.GetPages())
+			.RegisterViewModels(BootStrapper.GetViewModels())
+			.ConfigureAllFonts(BootStrapper.GetAppSpecificFonts())
+            .ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
@@ -20,6 +23,6 @@ public static class MauiProgram
 #endif
 
 		return builder.Build();
-	}
+	}	
 }
 

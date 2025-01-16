@@ -28,6 +28,12 @@
     <Color x:Key="Gray900">#212121</Color>
     <Color x:Key="Gray950">#141414</Color>
 
+    <Color x:Key="ForegroundColor">#CACDD3</Color>
+    <Color x:Key="SubheadLineColor">#ACB1BB</Color>
+    <Color x:Key="TilesBackgroundColor">#1F252A</Color>
+    <Color x:Key="TilesTextColor">#869CBD</Color>
+
+
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
     <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>

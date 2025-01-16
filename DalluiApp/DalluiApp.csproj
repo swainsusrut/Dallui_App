@@ -34,6 +34,12 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">22.0</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -58,4 +64,31 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Views\" />
+	  <None Remove="Resources\Images\ic_anime.jpg" />
+	  <None Remove="Resources\Images\ic_cartoon.jpg" />
+	  <None Remove="Resources\Images\ic_dashboard1.jpg" />
+	  <None Remove="Resources\Images\ic_dashboard2.jpg" />
+	  <None Remove="Resources\Images\ic_dashboard3.jpg" />
+	  <None Remove="Resources\Images\ic_funko.jpg" />
+	  <None Remove="Resources\Images\ic_isometric.jpg" />
+	  <None Remove="Resources\Images\ic_minimalism.jpg" />
+	  <None Remove="Resources\Images\ic_popart.jpg" />
+	  <None Remove="Resources\Images\ic_profile1.jpg" />
+	  <None Remove="Resources\Images\ic_profile2.jpg" />
+	  <None Remove="Resources\Images\ic_profile3.jpg" />
+	  <None Remove="Resources\Images\ic_profilesquare.jpg" />
+	  <None Remove="Resources\Images\ic_realistic.jpg" />
+	  <None Remove="Resources\Images\ic_storybook.jpg" />
+	  <None Remove="Resources\Images\ic_surrealism.jpg" />
+	  <None Remove="Resources\Images\ic_watercolor.jpg" />
+	  <None Remove="Resources\Fonts\Nexa-ExtraLight.ttf" />
+	  <None Remove="Resources\Fonts\Nexa-Heavy.ttf" />
+	  <None Remove="Models\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Views\" />
+	  <Folder Include="Models\" />
+	</ItemGroup>
 </Project>

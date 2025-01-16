@@ -3,14 +3,15 @@
     x:Class="DalluiApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:DalluiApp"
-    Shell.FlyoutBehavior="Disabled"
-    Title="DalluiApp">
+    xmlns:views="clr-namespace:DalluiApp.Views"
+    Shell.NavBarIsVisible="False"
+    Shell.FlyoutBehavior="Disabled">
 
+    <!--App Shell is not used-->
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        FlyoutItemIsVisible="False"
+        ContentTemplate="{DataTemplate views:DashboardPage}"
+        Route="dashboard" />
 
 </Shell>
 

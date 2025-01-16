@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DalluiApp.Views.DashboardPage"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="True"
+             Style="{StaticResource MainPage}">
+
+    <Grid Margin="25,25,1,1" RowDefinitions=".10*, .25*, .10*, .45*, .1*">
+        <Grid Margin="0,0,24,0" ColumnDefinitions="*,*"
+              VerticalOptions="Center">
+            <VerticalStackLayout VerticalOptions="Center">
+                <Rectangle
+                    HeightRequest="3"
+                    WidthRequest="25"
+                    HorizontalOptions="Start"
+                    BackgroundColor="{StaticResource ForegroundColor}"/>
+                <Rectangle
+                    Margin="0,5,0,0"
+                    HeightRequest="3"
+                    WidthRequest="35"
+                    HorizontalOptions="Start"
+                    BackgroundColor="{StaticResource ForegroundColor}"/>
+            </VerticalStackLayout>
+            <Border Grid.Column="1"
+                    HeightRequest="65"
+                    WidthRequest="65"
+                    HorizontalOptions="End"
+                    StrokeShape="RoundRectangle 70,70,70,70">
+                <Image HeightRequest="90"
+                       WidthRequest="90"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       Source="ic_profilesquare.jpg"
+                       Aspect="AspectFill"/>
+            </Border>
+        </Grid>
+
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" Spacing="10">
+            <Label
+                Style="{StaticResource Headline}"
+                Text="Create incredible universes"/>
+            <Label
+                Style="{StaticResource SubHeadline}"
+                Text="Join your friends"/>
+        </VerticalStackLayout>
+
+        <CollectionView Grid.Row="2"
+            ItemsSource="{Binding Profiles}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="10" Orientation="Horizontal"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions=".35*, .65*"
+                            HeightRequest="60"
+                            MinimumWidthRequest="160">
+                        <RoundRectangle Grid.ColumnSpan="2"
+                                        CornerRadius="45"
+                                        Fill="{StaticResource TilesBackgroundColor}"/>
+                        <Border Margin="5,0"
+                            HeightRequest="50"
+                            WidthRequest="50"
+                            HorizontalOptions="Start"
+                            StrokeShape="RoundRectangle 80,80,80,80"
+                            StrokeThickness="0">
+                            <Image HeightRequest="50" WidthRequest="50" Aspect="AspectFill" Source="{Binding ProfileImage}" />
+                        </Border>
+
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                            <Label Margin="5,0"
+                                FontSize="14"
+                                Style="{StaticResource Headline}"
+                                Text="{Binding Name}" />
+                            <Label Grid.Column="1"
+                                Margin="5,0"
+                                VerticalOptions="Start" 
+                                Style="{StaticResource Headline}"
+                                FontSize="12"
+                                Text="{Binding NoOfPhotos, StringFormat='{0} pictures'}"
+                                TextColor="{StaticResource TilesTextColor}"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Grid Grid.Row="3">
+
+
+        </Grid>
+
+        <Grid Grid.Row="4">
+
+
+        </Grid>
+    </Grid>
+</ContentPage>
