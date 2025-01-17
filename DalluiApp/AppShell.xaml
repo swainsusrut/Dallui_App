@@ -10,7 +10,7 @@
     <!--App Shell is not used-->
     <ShellContent
         FlyoutItemIsVisible="False"
-        ContentTemplate="{DataTemplate views:DashboardPage}"
+        ContentTemplate="{DataTemplate views:DashboardView}"
         Route="dashboard" />
 
 </Shell>

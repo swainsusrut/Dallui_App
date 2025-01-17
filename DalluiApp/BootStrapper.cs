@@ -32,7 +32,8 @@ namespace DalluiApp
         {
             return new List<Type>()
             {
-                typeof(DashboardPage)
+                typeof(DashboardView),
+                typeof(GenerationOptionsView)
             };
         }
 
@@ -40,7 +41,8 @@ namespace DalluiApp
         {
             return new List<Type>()
             {
-                typeof(DashboardPageViewModel)
+                typeof(DashboardViewModel),
+                typeof(GenerationOptionsViewModel)
             };
         }
 
@@ -49,6 +51,7 @@ namespace DalluiApp
             //If a page is not part of the Shell Hierarchy, you have to register the routes.
             return new Dictionary<Type, Type>()
             {
+                { typeof(GenerationOptionsViewModel), typeof(GenerationOptionsView) }
             };
         }
     }

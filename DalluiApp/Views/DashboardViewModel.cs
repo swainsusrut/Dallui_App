@@ -3,10 +3,13 @@ using System.Collections.ObjectModel;
 using DalluiApp.Helpers;
 using DalluiApp.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using System.Diagnostics;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DalluiApp.Views
 {
-	public partial class DashboardPageViewModel : ObservableObject
+	public partial class DashboardViewModel : ObservableObject
 	{
         [ObservableProperty]
         private LocalizedResources resources;
@@ -14,7 +17,7 @@ namespace DalluiApp.Views
         public ObservableCollection<Profile>? Profiles { get; set; }
         public ObservableCollection<GeneratedImage>? GeneratedImages { get; set; }
 
-        public DashboardPageViewModel()
+        public DashboardViewModel()
 		{
             Resources = new LocalizedResources(LocalizationHelper.Translations);
             loadInitialData();
@@ -83,6 +86,15 @@ namespace DalluiApp.Views
                     }
                },
             }; 
+        }
+
+        [RelayCommand]
+        private async Task CreateImageTapped()
+        {
+            Debug.WriteLine(nameof(CreateImageTapped));
+
+            //Fix Navigation issue
+            await Shell.Current.GoToAsync(nameof(GenerationOptionsViewModel));
         }
     }
 }
