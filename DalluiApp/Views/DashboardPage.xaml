@@ -2,11 +2,20 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DalluiApp.Views.DashboardPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
+             xmlns:processor="clr-namespace:PanCardView.Processors;assembly=PanCardView"
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              ios:Page.UseSafeArea="True"
              Style="{StaticResource MainPage}">
 
-    <Grid Margin="25,25,1,1" RowDefinitions=".10*, .25*, .10*, .45*, .1*">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <toolkit:ListToStringConverter x:Key="ListToStringConverter" Separator="," />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid Margin="25,25,1,1" RowDefinitions=".10*, .20*, .10*, .50*, .1*">
         <Grid Margin="0,0,24,0" ColumnDefinitions="*,*"
               VerticalOptions="Center">
             <VerticalStackLayout VerticalOptions="Center">
@@ -86,14 +95,53 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <Grid Grid.Row="3">
+        <cards:CoverFlowView
+            Grid.Row="3"
+            Margin="-10,20,5,0"
+            ItemsSource="{Binding GeneratedImages}"
+            PositionShiftValue="30">
+            <x:Arguments>
+                <processor:CoverFlowProcessor OpacityFactor="0.25" ScaleFactor="0.70" />
+            </x:Arguments>
 
+            <cards:CoverFlowView.ItemTemplate>
+                <DataTemplate>
+                    <Border StrokeShape="RoundRectangle 25,25,25,25" StrokeThickness="0">
+                        <Grid RowDefinitions=".7*,.3*">
+                            <Image
+                                Grid.RowSpan="2"
+                                Aspect="AspectFill"
+                                Source="{Binding ImagePath}" />
+                            <Grid Grid.Row="1">
+                                <Rectangle
+                                    Fill="{StaticResource Black}"
+                                    Opacity=".5"
+                                    StrokeThickness="0" />
+                                <VerticalStackLayout Margin="10,0,0,0" VerticalOptions="Center">
+                                    <Label Style="{StaticResource Headline}"
+                                        FontSize="25"
+                                        Text="{Binding MainKeyword}" />
+                                    <Label
+                                        Style="{StaticResource SubHeadline}"
+                                        FontSize="15"
+                                        Text="{Binding Keywords, Converter={StaticResource ListToStringConverter}}"
+                                        TextColor="{StaticResource White}" />
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </cards:CoverFlowView.ItemTemplate>
+        </cards:CoverFlowView>
 
-        </Grid>
-
-        <Grid Grid.Row="4">
-
-
-        </Grid>
+        <Border
+            Grid.Row="4"
+            Margin="0,15,0,0"
+            HorizontalOptions="End"
+            StrokeShape="RoundRectangle 55,0,0,0"
+            WidthRequest="250">
+            <Button Style="{StaticResource PrimaryButtonStyle}"
+                Text="Create new Image" />
+        </Border>
     </Grid>
 </ContentPage>

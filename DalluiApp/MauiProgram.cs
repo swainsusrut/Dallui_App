@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using PanCardView;
+using CommunityToolkit.Maui;
 
 namespace DalluiApp;
 
@@ -9,7 +11,9 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
-			.RegisterPages(BootStrapper.GetPages())
+			.UseCardsView()
+			.UseMauiCommunityToolkit()
+            .RegisterPages(BootStrapper.GetPages())
 			.RegisterViewModels(BootStrapper.GetViewModels())
 			.ConfigureAllFonts(BootStrapper.GetAppSpecificFonts())
             .ConfigureFonts(fonts =>
