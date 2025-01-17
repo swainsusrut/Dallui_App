@@ -7,11 +7,12 @@
              xmlns:processor="clr-namespace:PanCardView.Processors;assembly=PanCardView"
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              ios:Page.UseSafeArea="True"
-             Style="{StaticResource MainPage}">
+             Style="{StaticResource MainPage}"
+             x:Name="dashboardRef">
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <toolkit:ListToStringConverter x:Key="ListToStringConverter" Separator="," />
+            <toolkit:ListToStringConverter x:Key="ListToStringConverter" Separator=", " />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -48,10 +49,10 @@
         <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" Spacing="10">
             <Label
                 Style="{StaticResource Headline}"
-                Text="Create incredible universes"/>
+                Text="{Binding Resources[CreateUniverses]}"/>
             <Label
                 Style="{StaticResource SubHeadline}"
-                Text="Join your friends"/>
+                Text="{Binding Resources[JoinFriends]}"/>
         </VerticalStackLayout>
 
         <CollectionView Grid.Row="2"
@@ -84,11 +85,21 @@
                                 Text="{Binding Name}" />
                             <Label Grid.Column="1"
                                 Margin="5,0"
-                                VerticalOptions="Start" 
-                                Style="{StaticResource Headline}"
-                                FontSize="12"
-                                Text="{Binding NoOfPhotos, StringFormat='{0} pictures'}"
-                                TextColor="{StaticResource TilesTextColor}"/>
+                                VerticalOptions="Start">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding NoOfPhotos}"
+                                              Style="{StaticResource Headline}"
+                                              FontSize="12"
+                                              TextColor="{StaticResource TilesTextColor}"/>
+                                        <Span Text=" "/>
+                                        <Span Text="{Binding Path=BindingContext.Resources[Pictures], Source={x:Reference dashboardRef}}"
+                                              Style="{StaticResource Headline}"
+                                              FontSize="12"
+                                              TextColor="{StaticResource TilesTextColor}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                         </VerticalStackLayout>
                     </Grid>
                 </DataTemplate>
@@ -141,7 +152,7 @@
             StrokeShape="RoundRectangle 55,0,0,0"
             WidthRequest="250">
             <Button Style="{StaticResource PrimaryButtonStyle}"
-                Text="Create new Image" />
+                Text="{Binding Resources[CreateImage]}" />
         </Border>
     </Grid>
 </ContentPage>

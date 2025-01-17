@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using PanCardView;
 using CommunityToolkit.Maui;
+using DalluiApp.Helpers;
 
 namespace DalluiApp;
 
@@ -26,7 +27,9 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
-		return builder.Build();
+		LocalizationHelper.InitTranslation("en");
+
+        return builder.Build();
 	}	
 }
 

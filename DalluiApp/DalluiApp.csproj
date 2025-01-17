@@ -64,6 +64,8 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="CardsView.Maui" Version="1.1.0" />
 		<PackageReference Include="CommunityToolkit.Maui" Version="8.0.1" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -88,9 +90,23 @@
 	  <None Remove="Resources\Fonts\Nexa-ExtraLight.ttf" />
 	  <None Remove="Resources\Fonts\Nexa-Heavy.ttf" />
 	  <None Remove="Models\" />
+	  <None Remove="Resources\Localization\" />
+	  <None Remove="Resources\Localization\en.json" />
+	  <None Remove="Resources\Localization\es.json" />
+	  <None Remove="Helpers\" />
+	  <None Remove="Resources\EmbeddedFiles\" />
+	  <None Remove="Resources\EmbeddedFiles\Languages.json" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Views\" />
 	  <Folder Include="Models\" />
+	  <Folder Include="Resources\Localization\" />
+	  <Folder Include="Helpers\" />
+	  <Folder Include="Resources\EmbeddedFiles\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Localization\en.json" />
+	  <EmbeddedResource Include="Resources\Localization\es.json" />
+	  <EmbeddedResource Include="Resources\EmbeddedFiles\Languages.json" />
 	</ItemGroup>
 </Project>

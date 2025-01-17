@@ -1,0 +1,20 @@
+﻿{
+    "Version": 1,
+    "Languages": [
+        {
+            "Code": "en",
+            "Name": "English",
+            "Desc": "English",
+            "ServerLanguageCode": "en",
+            "LocaleIdentifier": "en"
+        },
+        {
+            "Code": "es",
+            "Name": "Spanish",
+            "Desc": "Spanish",
+            "ServerLanguageCode": "es",
+            "LocaleIdentifier": "es_ES"
+        }
+    ]
+}
+

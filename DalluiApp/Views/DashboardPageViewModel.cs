@@ -1,17 +1,23 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using DalluiApp.Helpers;
 using DalluiApp.Models;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace DalluiApp.Views
 {
-	public class DashboardPageViewModel
+	public partial class DashboardPageViewModel : ObservableObject
 	{
-		public ObservableCollection<Profile>? Profiles { get; set; }
+        [ObservableProperty]
+        private LocalizedResources resources;
+
+        public ObservableCollection<Profile>? Profiles { get; set; }
         public ObservableCollection<GeneratedImage>? GeneratedImages { get; set; }
 
         public DashboardPageViewModel()
 		{
-			loadInitialData();
+            Resources = new LocalizedResources(LocalizationHelper.Translations);
+            loadInitialData();
 		}
 
         private void loadInitialData()
@@ -43,25 +49,37 @@ namespace DalluiApp.Views
                new GeneratedImage
                {
                     ImagePath = "ic_dashboard1.jpg",
-                    MainKeyword = "Castle",
+                    MainKeyword = Resources[LocalizedResourceKeys.Castle],
                     Keywords = new List<string> {
-                         "Epic, Hill, Mountain, Trees, Blue sky"
+                        Resources[LocalizedResourceKeys.Epic],
+                        Resources[LocalizedResourceKeys.Hill],
+                        Resources[LocalizedResourceKeys.Mountain],
+                        Resources[LocalizedResourceKeys.Trees],
+                        Resources[LocalizedResourceKeys.BlueSky]
                     }
                },
                new GeneratedImage
                {
                     ImagePath = "ic_dashboard2.jpg",
-                    MainKeyword = "Mountains",
+                    MainKeyword = Resources[LocalizedResourceKeys.Mountains],
                     Keywords = new List<string> {
-                         "Landscape, Photorealistic, Dawn, Mountains, Moon"
+                        Resources[LocalizedResourceKeys.Landscape],
+                        Resources[LocalizedResourceKeys.Photorealistic],
+                        Resources[LocalizedResourceKeys.Dawn],
+                        Resources[LocalizedResourceKeys.Mountains],
+                        Resources[LocalizedResourceKeys.Moon]
                     }
                },
                new GeneratedImage
                {
                     ImagePath = "ic_dashboard3.jpg",
-                    MainKeyword = "Robot",
+                    MainKeyword = Resources[LocalizedResourceKeys.Robot],
                     Keywords = new List<string> {
-                         "AI, Robotic, Human, Light, Metal"
+                        Resources[LocalizedResourceKeys.AI],
+                        Resources[LocalizedResourceKeys.Robotic],
+                        Resources[LocalizedResourceKeys.Human],
+                        Resources[LocalizedResourceKeys.Light],
+                        Resources[LocalizedResourceKeys.Metal]
                     }
                },
             }; 
