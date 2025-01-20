@@ -34,6 +34,8 @@
     <Color x:Key="TilesTextColor">#869CBD</Color>
     <Color x:Key="ButtonColor">#E8FF8E</Color>
     <Color x:Key="ButtonTextColor">#101216</Color>
+    <Color x:Key="OptionsBgColor">#242529</Color>
+    <Color x:Key="SecondaryButtonColor">#98C0FE</Color>
 
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>

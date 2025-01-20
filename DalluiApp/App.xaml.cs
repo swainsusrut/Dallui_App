@@ -11,7 +11,7 @@ public partial class App : Application
 		//App Shell is not used
 		//MainPage = new AppShell();
 
-		MainPage = serviceProvider.GetRequiredService<DashboardView>();
+		MainPage = serviceProvider.GetRequiredService<GenerationOptionsView>();
 	}
 }
 

@@ -19,6 +19,25 @@
     "Light": "Light",
     "Metal": "Metal",
     "Castle": "Castle",
-    "Robot": "Robot"
+    "Robot": "Robot",
+    "SelectOptions": "Select Options",
+    "MinimumOptions": "Minimum of 6 options",
+    "ChoosePicture": "Choose a style of picture",
+    "Generate": "Generate",
+    "GenerationPlaceholder": "A man on a motorcycle rolls down a slope in a snowstorm. There are trees and no one else around...",
+    "World": "World",
+    "Winter": "Winter",
+    "Separation": "Separation",
+    "Solitude": "Solitude",
+    "Cartoon": "Cartoon",
+    "Realistic": "Realistic",
+    "WatercolorArt": "Watercolor Art",
+    "Isometric": "Isometric",
+    "PopArt": "Pop Art",
+    "Surrealism": "Surrealism",
+    "Minimalism": "Minimalism",
+    "Funko": "Funko",
+    "Anime": "Anime",
+    "Storybook": "Storybook"
 }
 

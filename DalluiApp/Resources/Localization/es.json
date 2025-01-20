@@ -19,6 +19,25 @@
     "Light": "Ligera",
     "Metal": "Metal",
     "Castle": "Castillo",
-    "Robot": "Robot"
+    "Robot": "Robot",
+    "SelectOptions": "Seleccionar opciones",
+    "MinimumOptions": "Mínimo de 6 opciones",
+    "ChoosePicture": "Elige un estilo de imagen",
+    "Generate": "Generar",
+    "GenerationPlaceholder": "Un hombre en motocicleta rueda cuesta abajo en medio de una tormenta de nieve. Hay árboles y nadie más alrededor...",
+    "World": "Mundo",
+    "Winter": "Invierno",
+    "Separation": "Separación",
+    "Solitude": "Soledad",
+    "Cartoon": "Dibujos animados",
+    "Realistic": "Realista",
+    "WatercolorArt": "Arte De La Acuarela",
+    "Isometric": "isometrico",
+    "PopArt": "arte pop",
+    "Surrealism": "Surrealismo",
+    "Minimalism": "Minimalismo",
+    "Funko": "Funko",
+    "Anime": "Animado",
+    "Storybook": "libro de cuentos"
 }
 

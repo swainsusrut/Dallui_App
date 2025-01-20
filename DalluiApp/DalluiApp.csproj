@@ -96,6 +96,8 @@
 	  <None Remove="Helpers\" />
 	  <None Remove="Resources\EmbeddedFiles\" />
 	  <None Remove="Resources\EmbeddedFiles\Languages.json" />
+	  <None Remove="Controls\" />
+	  <None Remove="Platforms\iOS\Utils\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Views\" />
@@ -103,10 +105,15 @@
 	  <Folder Include="Resources\Localization\" />
 	  <Folder Include="Helpers\" />
 	  <Folder Include="Resources\EmbeddedFiles\" />
+	  <Folder Include="Controls\" />
+	  <Folder Include="Platforms\iOS\Utils\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <EmbeddedResource Include="Resources\Localization\en.json" />
 	  <EmbeddedResource Include="Resources\Localization\es.json" />
 	  <EmbeddedResource Include="Resources\EmbeddedFiles\Languages.json" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Remove="Resources\Images\ic_cross.jpg" />
 	</ItemGroup>
 </Project>

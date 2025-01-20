@@ -24,6 +24,25 @@ namespace DalluiApp.Helpers
         public const string Metal = nameof(Metal);
         public const string Castle = nameof(Castle);
         public const string Robot = nameof(Robot);
+        public const string SelectOptions = nameof(SelectOptions);
+        public const string MinimumOptions = nameof(MinimumOptions);
+        public const string ChoosePicture = nameof(ChoosePicture);
+        public const string Generate = nameof(Generate);
+        public const string GenerationPlaceholder = nameof(GenerationPlaceholder);
+        public const string World = nameof(World);
+        public const string Winter = nameof(Winter);
+        public const string Separation = nameof(Separation);
+        public const string Solitude = nameof(Solitude);
+        public const string Cartoon = nameof(Cartoon);
+        public const string Realistic = nameof(Realistic);
+        public const string WatercolorArt = nameof(WatercolorArt);
+        public const string Isometric = nameof(Isometric);
+        public const string PopArt = nameof(PopArt);
+        public const string Surrealism = nameof(Surrealism);
+        public const string Minimalism = nameof(Minimalism);
+        public const string Funko = nameof(Funko);
+        public const string Anime = nameof(Anime);
+        public const string Storybook = nameof(Storybook);
     }
 }
 

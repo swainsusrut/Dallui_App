@@ -30,19 +30,19 @@ namespace DalluiApp.Views
                new Profile
                {
                     Name = "Hector",
-                    ProfileImage = "ic_profile1.jpg",
+                    ProfileImage = AppConstants.ImageSource.Profile1,
                     NoOfPhotos = 12
                },
                new Profile
                {
                     Name = "Maddy",
-                    ProfileImage = "ic_profile2.jpg",
+                    ProfileImage = AppConstants.ImageSource.Profile2,
                     NoOfPhotos = 5
                },
                new Profile
                {
                     Name = "Henry",
-                    ProfileImage = "ic_profile3.jpg",
+                    ProfileImage = AppConstants.ImageSource.Profile3,
                     NoOfPhotos = 25
                }
             };
@@ -51,7 +51,7 @@ namespace DalluiApp.Views
             {
                new GeneratedImage
                {
-                    ImagePath = "ic_dashboard1.jpg",
+                    ImagePath = AppConstants.ImageSource.Dashboard1,
                     MainKeyword = Resources[LocalizedResourceKeys.Castle],
                     Keywords = new List<string> {
                         Resources[LocalizedResourceKeys.Epic],
@@ -63,7 +63,7 @@ namespace DalluiApp.Views
                },
                new GeneratedImage
                {
-                    ImagePath = "ic_dashboard2.jpg",
+                    ImagePath = AppConstants.ImageSource.Dashboard2,
                     MainKeyword = Resources[LocalizedResourceKeys.Mountains],
                     Keywords = new List<string> {
                         Resources[LocalizedResourceKeys.Landscape],
@@ -75,7 +75,7 @@ namespace DalluiApp.Views
                },
                new GeneratedImage
                {
-                    ImagePath = "ic_dashboard3.jpg",
+                    ImagePath = AppConstants.ImageSource.Dashboard3,
                     MainKeyword = Resources[LocalizedResourceKeys.Robot],
                     Keywords = new List<string> {
                         Resources[LocalizedResourceKeys.AI],

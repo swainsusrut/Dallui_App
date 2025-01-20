@@ -4,11 +4,113 @@
              x:Class="DalluiApp.Views.GenerationOptionsView"
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              ios:Page.UseSafeArea="True"
+             xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+             android:Application.WindowSoftInputModeAdjust="Pan"
+             xmlns:localControls="clr-namespace:DalluiApp.Controls"
+             Style="{StaticResource MainPage}"
              x:Name="generationOptionsRef">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <localControls:KeyboardAutoScroll x:Name="keyBoardAutoScroll">
+    <Grid Margin="25,25,0,0" RowDefinitions=".2*,.1*,.1*,.3*,.2*,.1*">
+        <VerticalStackLayout VerticalOptions="Center">
+            <Label
+                Style="{StaticResource Headline}"
+                Text="{Binding Resources[SelectOptions]}"/>
+            <Label
+                Margin="0,10,0,0"
+                Style="{StaticResource SubHeadline}"
+                Text="{Binding Resources[MinimumOptions]}"/>
+        </VerticalStackLayout>
+
+        <CollectionView Grid.Row="1" Margin="-10,0,0,0" HorizontalScrollBarVisibility="Never"
+                        ItemsSource="{Binding Options}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid HeightRequest="40" WidthRequest="130">
+                        <RoundRectangle Margin="10,0" CornerRadius="35" Fill="{StaticResource OptionsBgColor}" />
+                        <Label
+                            Style="{StaticResource Headline}"
+                            FontSize="14"
+                            Text="{Binding .}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Label
+            Grid.Row="2"
+            Style="{StaticResource Headline}"
+            FontSize="20"
+            Text="{Binding Resources[ChoosePicture]}"/>
+
+        <CollectionView
+            Grid.Row="3"
+            ItemsSource="{Binding Styles}"
+            SelectionMode="Single">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="10,0">
+                        <Border StrokeShape="RoundRectangle 20,20,20,20" StrokeThickness="0">
+                            <Image Source="{Binding ImageUrl}" />
+                        </Border>
+                        <Label
+                            Margin="0,0,0,10"
+                            Style="{StaticResource Headline}"
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding Name}"
+                            VerticalOptions="End">
+                            <Label.Shadow>
+                                <Shadow
+                                    Brush="{StaticResource Black}"
+                                    Opacity="1"
+                                    Radius="1"
+                                    Offset="5,5" />
+                            </Label.Shadow>
+                        </Label>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+        <Border
+            Grid.Row="4"
+            Margin="0,20,15,20"
+            BackgroundColor="{StaticResource OptionsBgColor}"
+            StrokeShape="RoundRectangle 20,20,20,20"
+            StrokeThickness="0">
+            <Editor
+                Margin="5"
+                Placeholder="{Binding Resources[GenerationPlaceholder]}"
+                BackgroundColor="{StaticResource OptionsBgColor}"
+                TextColor="{StaticResource White}" />
+        </Border>
+
+        <Button
+            Grid.Row="5"
+            Style="{StaticResource SecondaryButtonStyle}"
+            Text="{Binding Resources[Generate]}"/>
+
+        <AbsoluteLayout HorizontalOptions="End" VerticalOptions="Start"
+                        Margin="20,10"
+            AbsoluteLayout.LayoutFlags="XProportional,YProportional"
+            AbsoluteLayout.LayoutBounds="0.1,0.9,-1,-1">
+            <ImageButton Source="ic_cross.jpg"
+                         WidthRequest="15" HeightRequest="15"
+                         Command="{Binding CloseButtonTappedCommand}"/>
+        </AbsoluteLayout>
+    </Grid>
+    </localControls:KeyboardAutoScroll>
 </ContentPage>
