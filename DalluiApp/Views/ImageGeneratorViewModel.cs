@@ -17,9 +17,14 @@ namespace DalluiApp.Views
         }
 
         [RelayCommand]
-		private void FinishTapped()
+		private async Task FinishTapped(Button button)
 		{
             Debug.WriteLine(nameof(FinishTapped));
+            if (button != null)
+            {
+                await button.FadeTo(0, 100);
+                await button.FadeTo(1, 100);
+            }
         }
     }
 }

@@ -49,9 +49,25 @@ namespace DalluiApp.Views
         }
 
         [RelayCommand]
-        private void CloseButtonTapped()
+        private async Task CloseButtonTapped(ImageButton imageButton)
         {
             Debug.WriteLine(nameof(CloseButtonTapped));
+            if (imageButton != null)
+            {
+                await imageButton.ScaleTo(0.8, 100);
+                await imageButton.ScaleTo(1, 100);
+            }
+        }
+
+        [RelayCommand]
+        private async Task GenerateButtonTapped(Button button)
+        {
+            Debug.WriteLine(nameof(GenerateButtonTapped));
+            if (button != null)
+            {
+                await button.ScaleTo(0.8, 200);
+                await button.ScaleTo(1, 200);
+            }
         }
     }
 }

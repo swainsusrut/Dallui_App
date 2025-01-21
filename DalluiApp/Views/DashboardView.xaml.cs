@@ -1,4 +1,6 @@
-﻿namespace DalluiApp.Views;
+﻿using DalluiApp.Helpers;
+
+namespace DalluiApp.Views;
 
 public partial class DashboardView : ContentPage
 {
@@ -11,6 +13,10 @@ public partial class DashboardView : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
+
+        if (AppSettings.DashboardAnimationCounter > 0)
+            return;
+
         _startAnimation();
     }
 
@@ -23,6 +29,8 @@ public partial class DashboardView : ContentPage
         await _animateFriendsCollectionAsync();
         await _animateImageCollectionAsync();
         await _animateButtonAsync();
+
+        AppSettings.DashboardAnimationCounter++;
     }
 
     private async Task _setInitialPositionAsync()

@@ -13,16 +13,17 @@
     <localControls:KeyboardAutoScroll x:Name="keyBoardAutoScroll">
     <Grid Margin="25,25,0,0" RowDefinitions=".2*,.1*,.1*,.3*,.2*,.1*">
         <VerticalStackLayout VerticalOptions="Center">
-            <Label
+            <Label x:Name="lblHeadline"
                 Style="{StaticResource Headline}"
                 Text="{Binding Resources[SelectOptions]}"/>
-            <Label
+            <Label x:Name="lblSubHeadline"
                 Margin="0,10,0,0"
                 Style="{StaticResource SubHeadline}"
                 Text="{Binding Resources[MinimumOptions]}"/>
         </VerticalStackLayout>
 
         <CollectionView Grid.Row="1" Margin="-10,0,0,0" HorizontalScrollBarVisibility="Never"
+                        x:Name="optionsCollection"
                         ItemsSource="{Binding Options}">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal" />
@@ -43,13 +44,13 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <Label
+        <Label x:Name="lblInstruction"
             Grid.Row="2"
             Style="{StaticResource Headline}"
             FontSize="20"
             Text="{Binding Resources[ChoosePicture]}"/>
 
-        <CollectionView
+        <CollectionView x:Name="styleCollection"
             Grid.Row="3"
             ItemsSource="{Binding Styles}"
             SelectionMode="Single">
@@ -85,7 +86,7 @@
 
         </CollectionView>
 
-        <Border
+        <Border x:Name="editor"
             Grid.Row="4"
             Margin="0,20,15,20"
             BackgroundColor="{StaticResource OptionsBgColor}"
@@ -98,8 +99,10 @@
                 TextColor="{StaticResource White}" />
         </Border>
 
-        <Button
+        <Button x:Name="generateButton"
             Grid.Row="5"
+            Command="{Binding GenerateButtonTappedCommand}"
+            CommandParameter="{x:Reference generateButton}"
             Style="{StaticResource SecondaryButtonStyle}"
             Text="{Binding Resources[Generate]}"/>
 
@@ -108,8 +111,10 @@
             AbsoluteLayout.LayoutFlags="XProportional,YProportional"
             AbsoluteLayout.LayoutBounds="0.1,0.9,-1,-1">
             <ImageButton Source="ic_cross.jpg"
+                         x:Name="closeButton"
                          WidthRequest="15" HeightRequest="15"
-                         Command="{Binding CloseButtonTappedCommand}"/>
+                         Command="{Binding CloseButtonTappedCommand}"
+                         CommandParameter="{x:Reference closeButton}"/>
         </AbsoluteLayout>
     </Grid>
     </localControls:KeyboardAutoScroll>
