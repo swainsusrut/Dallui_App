@@ -33,7 +33,8 @@ namespace DalluiApp
             return new List<Type>()
             {
                 typeof(DashboardView),
-                typeof(GenerationOptionsView)
+                typeof(GenerationOptionsView),
+                typeof(ImageGeneratorView)
             };
         }
 
@@ -42,7 +43,8 @@ namespace DalluiApp
             return new List<Type>()
             {
                 typeof(DashboardViewModel),
-                typeof(GenerationOptionsViewModel)
+                typeof(GenerationOptionsViewModel),
+                typeof(ImageGeneratorViewModel)
             };
         }
 

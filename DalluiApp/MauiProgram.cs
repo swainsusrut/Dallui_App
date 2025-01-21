@@ -2,6 +2,7 @@
 using PanCardView;
 using CommunityToolkit.Maui;
 using DalluiApp.Helpers;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace DalluiApp;
 
@@ -14,6 +15,7 @@ public static class MauiProgram
 			.UseMauiApp<App>()
 			.UseCardsView()
 			.UseMauiCommunityToolkit()
+			.UseSkiaSharp()
 			.RegisterPages(BootStrapper.GetPages())
 			.RegisterViewModels(BootStrapper.GetViewModels())
 			.ConfigureAllFonts(BootStrapper.GetAppSpecificFonts())

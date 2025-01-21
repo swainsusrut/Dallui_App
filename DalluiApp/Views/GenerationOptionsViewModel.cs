@@ -51,7 +51,7 @@ namespace DalluiApp.Views
         [RelayCommand]
         private void CloseButtonTapped()
         {
-            Debug.WriteLine("Close Button Tapped...");
+            Debug.WriteLine(nameof(CloseButtonTapped));
         }
     }
 }

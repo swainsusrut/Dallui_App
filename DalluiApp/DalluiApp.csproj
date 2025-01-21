@@ -66,6 +66,7 @@
 		<PackageReference Include="CommunityToolkit.Maui" Version="8.0.1" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -98,6 +99,7 @@
 	  <None Remove="Resources\EmbeddedFiles\Languages.json" />
 	  <None Remove="Controls\" />
 	  <None Remove="Platforms\iOS\Utils\" />
+	  <None Remove="Resources\Raw\robot.json" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Views\" />
@@ -115,5 +117,8 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Remove="Resources\Images\ic_cross.jpg" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Raw\robot.json" />
 	</ItemGroup>
 </Project>
