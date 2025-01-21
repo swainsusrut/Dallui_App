@@ -89,12 +89,17 @@ namespace DalluiApp.Views
         }
 
         [RelayCommand]
-        private async Task CreateImageTapped()
+        private async Task CreateImageTapped(Button button)
         {
             Debug.WriteLine(nameof(CreateImageTapped));
+            if (button != null)
+            {
+                await button.FadeTo(0, 100);
+                await button.FadeTo(1, 100);
+            }
 
             //Fix Navigation issue
-            await Shell.Current.GoToAsync(nameof(GenerationOptionsViewModel));
+            //await Shell.Current.GoToAsync(nameof(GenerationOptionsViewModel));
         }
     }
 }

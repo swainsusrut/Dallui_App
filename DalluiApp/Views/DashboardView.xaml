@@ -7,6 +7,7 @@
              xmlns:processor="clr-namespace:PanCardView.Processors;assembly=PanCardView"
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              ios:Page.UseSafeArea="True"
+             xmlns:localControls="clr-namespace:DalluiApp.Controls"
              Style="{StaticResource MainPage}"
              x:Name="dashboardRef">
 
@@ -19,7 +20,7 @@
     <Grid Margin="25,25,1,1" RowDefinitions=".10*, .20*, .10*, .50*, .1*">
         <Grid Margin="0,0,24,0" ColumnDefinitions="*,*"
               VerticalOptions="Center">
-            <VerticalStackLayout VerticalOptions="Center">
+            <VerticalStackLayout x:Name="menuIcon" VerticalOptions="Center">
                 <Rectangle
                     HeightRequest="3"
                     WidthRequest="25"
@@ -33,6 +34,7 @@
                     BackgroundColor="{StaticResource ForegroundColor}"/>
             </VerticalStackLayout>
             <Border Grid.Column="1"
+                    x:Name="profileIcon"
                     HeightRequest="65"
                     WidthRequest="65"
                     HorizontalOptions="End"
@@ -47,15 +49,16 @@
         </Grid>
 
         <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" Spacing="10">
-            <Label
+            <Label x:Name="lblHeadline"
                 Style="{StaticResource Headline}"
                 Text="{Binding Resources[CreateUniverses]}"/>
-            <Label
+            <Label x:Name="lblSubHeadline"
                 Style="{StaticResource SubHeadline}"
                 Text="{Binding Resources[JoinFriends]}"/>
         </VerticalStackLayout>
 
-        <CollectionView Grid.Row="2"
+        <CollectionView x:Name="friendsCollection" Grid.Row="2"
+                        HorizontalScrollBarVisibility="Never"
             ItemsSource="{Binding Profiles}">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout ItemSpacing="10" Orientation="Horizontal"/>
@@ -69,21 +72,32 @@
                         <RoundRectangle Grid.ColumnSpan="2"
                                         CornerRadius="45"
                                         Fill="{StaticResource TilesBackgroundColor}"/>
-                        <Border Margin="5,0"
+                        <Border x:Name="profileBorder"
+                            Scale="1"
+                            Margin="5,0"
                             HeightRequest="50"
                             WidthRequest="50"
                             HorizontalOptions="Start"
                             StrokeShape="RoundRectangle 80,80,80,80"
                             StrokeThickness="0">
                             <Image HeightRequest="50" WidthRequest="50" Aspect="AspectFill" Source="{Binding ProfileImage}" />
+                            <Border.Behaviors>
+                                <toolkit:AnimationBehavior>
+                                    <toolkit:AnimationBehavior.AnimationType>
+                                        <localControls:ScaleAnimation Length="500"/>
+                                    </toolkit:AnimationBehavior.AnimationType>
+                                </toolkit:AnimationBehavior>
+                            </Border.Behaviors>
                         </Border>
 
-                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
-                            <Label Margin="5,0"
+                        <VerticalStackLayout Grid.Column="1" x:Name="friendsStack" Scale="1" VerticalOptions="Center">
+                            <Label x:Name="lblName"
+                                Margin="5,0"
                                 FontSize="14"
                                 Style="{StaticResource Headline}"
-                                Text="{Binding Name}" />
-                            <Label Grid.Column="1"
+                                Text="{Binding Name}"/>
+                            <Label x:Name="lblInfo"
+                                Grid.Column="1"
                                 Margin="5,0"
                                 VerticalOptions="Start">
                                 <Label.FormattedText>
@@ -106,7 +120,7 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <cards:CoverFlowView
+        <cards:CoverFlowView x:Name="imageCollection"
             Grid.Row="3"
             Margin="-10,20,5,0"
             ItemsSource="{Binding GeneratedImages}"
@@ -145,15 +159,17 @@
             </cards:CoverFlowView.ItemTemplate>
         </cards:CoverFlowView>
 
-        <Border
+        <Border x:Name="btnBorder"
             Grid.Row="4"
             Margin="0,15,0,0"
             HorizontalOptions="End"
             StrokeShape="RoundRectangle 55,0,0,0"
             WidthRequest="250">
-            <Button Style="{StaticResource PrimaryButtonStyle}"
+            <Button x:Name="createButton"
+                Style="{StaticResource PrimaryButtonStyle}"
                 Text="{Binding Resources[CreateImage]}"
-                Command="{Binding CreateImageTappedCommand}"/>
+                Command="{Binding CreateImageTappedCommand}"
+                CommandParameter="{x:Reference createButton}"/>
         </Border>
     </Grid>
 </ContentPage>
