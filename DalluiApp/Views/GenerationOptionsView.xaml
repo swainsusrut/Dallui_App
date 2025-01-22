@@ -8,6 +8,7 @@
              android:Application.WindowSoftInputModeAdjust="Pan"
              xmlns:localControls="clr-namespace:DalluiApp.Controls"
              Style="{StaticResource MainPage}"
+             Shell.NavBarIsVisible="False"
              x:Name="generationOptionsRef">
 
     <localControls:KeyboardAutoScroll x:Name="keyBoardAutoScroll">

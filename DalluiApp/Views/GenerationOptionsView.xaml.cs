@@ -32,8 +32,8 @@ public partial class GenerationOptionsView : ContentPage
         //Headlines
         lblHeadline.Opacity = 0;
         lblSubHeadline.Opacity = 0;
-        lblHeadline.TranslationX = 400;
-        lblSubHeadline.TranslationX = -400;
+        lblHeadline.TranslationX = -400;
+        lblSubHeadline.TranslationX = 400;
 
         //Options Collection
         optionsCollection.Opacity = 0;
@@ -64,8 +64,8 @@ public partial class GenerationOptionsView : ContentPage
     private async void _animateCloseButtonAsync()
     {
         await Task.WhenAny(
-            closeButton.ScaleTo(1, 1500, Easing.CubicOut),
-            closeButton.RotateTo(closeButton.Rotation + 360, 1500, Easing.CubicOut)
+            closeButton.ScaleTo(1, 1000, Easing.CubicOut),
+            closeButton.RotateTo(closeButton.Rotation + 360, 1000, Easing.CubicOut)
         );
     }
 

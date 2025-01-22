@@ -25,6 +25,8 @@ namespace DalluiApp.Views
                 await button.FadeTo(0, 100);
                 await button.FadeTo(1, 100);
             }
+
+            await Shell.Current.Navigation.PopToRootAsync(false);
         }
     }
 }

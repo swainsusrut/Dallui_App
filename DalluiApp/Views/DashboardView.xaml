@@ -9,6 +9,7 @@
              ios:Page.UseSafeArea="True"
              xmlns:localControls="clr-namespace:DalluiApp.Controls"
              Style="{StaticResource MainPage}"
+             Shell.NavBarIsVisible="False"
              x:Name="dashboardRef">
 
     <ContentPage.Resources>

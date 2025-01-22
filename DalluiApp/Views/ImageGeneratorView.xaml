@@ -6,6 +6,7 @@
              ios:Page.UseSafeArea="True"
              xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              Style="{StaticResource MainPage}"
+             Shell.NavBarIsVisible="False"
              x:Name="generationOptionsRef">
 
     <Grid Margin="20,25,20,0" RowDefinitions=".2*,.6*,.2*">

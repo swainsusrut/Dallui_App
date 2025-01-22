@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DalluiApp.Helpers;
 
 namespace DalluiApp
 {
@@ -63,6 +64,7 @@ namespace DalluiApp
             foreach (var route in routes)
             {
                 Routing.RegisterRoute(route.Key.Name, route.Value);
+                //AppRoute.Register(route.Key, route.Value); //Requires parameterless constructor
             }
         }
     }

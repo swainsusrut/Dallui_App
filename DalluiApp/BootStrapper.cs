@@ -53,7 +53,9 @@ namespace DalluiApp
             //If a page is not part of the Shell Hierarchy, you have to register the routes.
             return new Dictionary<Type, Type>()
             {
-                { typeof(GenerationOptionsViewModel), typeof(GenerationOptionsView) }
+                { typeof(DashboardViewModel), typeof(DashboardView) },
+                { typeof(GenerationOptionsViewModel), typeof(GenerationOptionsView) },
+                { typeof(ImageGeneratorViewModel), typeof(ImageGeneratorView) }
             };
         }
     }

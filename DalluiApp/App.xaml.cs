@@ -8,10 +8,9 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		//App Shell is not used
-		//MainPage = new AppShell();
+		MainPage = new AppShell();
 
-		MainPage = serviceProvider.GetRequiredService<DashboardView>();
+		//MainPage = new NavigationPage(serviceProvider.GetRequiredService<DashboardView>());
 	}
 }
 

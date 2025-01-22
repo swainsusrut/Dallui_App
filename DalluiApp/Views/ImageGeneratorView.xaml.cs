@@ -26,7 +26,7 @@ public partial class ImageGeneratorView : ContentPage
                 var counter = 0;
                 while (await timer.WaitForNextTickAsync(cancellationToken.Token))
                 {
-                    if (counter == 3)
+                    if (counter == 2)
                     {
                         cancellationToken.Cancel();
                     }

@@ -57,6 +57,8 @@ namespace DalluiApp.Views
                 await imageButton.ScaleTo(0.8, 100);
                 await imageButton.ScaleTo(1, 100);
             }
+
+            await Shell.Current.Navigation.PopAsync(true);
         }
 
         [RelayCommand]
@@ -68,6 +70,8 @@ namespace DalluiApp.Views
                 await button.ScaleTo(0.8, 200);
                 await button.ScaleTo(1, 200);
             }
+
+            await Shell.Current.GoToAsync(nameof(ImageGeneratorViewModel));
         }
     }
 }

@@ -98,8 +98,7 @@ namespace DalluiApp.Views
                 await button.FadeTo(1, 100);
             }
 
-            //Fix Navigation issue
-            //await Shell.Current.GoToAsync(nameof(GenerationOptionsViewModel));
+            await Shell.Current.GoToAsync(nameof(GenerationOptionsViewModel));
         }
     }
 }
