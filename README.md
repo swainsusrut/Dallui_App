@@ -7,6 +7,7 @@ The development of the Dallui App focused on creating an intuitive and engaging 
 ## Screenshots
 ![Simulator Screenshot - iPhone 16 - 2025-01-22 at 17 08 48](https://github.com/user-attachments/assets/382111cc-bf62-4fd1-bb57-cde9f0c736aa)
 ![Simulator Screenshot - iPhone 16 - 2025-01-22 at 17 09 04](https://github.com/user-attachments/assets/69930a07-1821-41ac-8267-8f45e684f8bc)
+![Simulator Screenshot - iPhone 16 - 2025-01-22 at 17 09 09](https://github.com/user-attachments/assets/e01ea0b1-28aa-4e29-839c-2eaf6a4a8a63)
 ![Simulator Screenshot - iPhone 16 - 2025-01-22 at 17 09 14](https://github.com/user-attachments/assets/c0e72c33-8ff9-4eae-88c9-7dca1acd1f43)
 
 ## How to Run
